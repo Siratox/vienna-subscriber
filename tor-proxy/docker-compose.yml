@@ -1,0 +1,10 @@
+services:
+  tor-proxy:
+    build: .
+    container_name: tor-proxy
+    ports:
+      - "9050:9050"
+      - "9051:9051"
+    env_file:
+      - .env.docker
+    restart: unless-stopped
